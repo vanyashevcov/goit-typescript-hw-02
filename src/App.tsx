@@ -7,7 +7,6 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadModeBtn/LoadModeBtn";
 import { ImageModal } from "./components/ImageModal/ImageModal";
 import * as imagesService from "./services/api";
-import { Image } from './types';
 
 interface Image {
   id: string;
