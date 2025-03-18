@@ -2,7 +2,7 @@ import React from "react";
 
 interface LoadMoreBtnProps {
   onClick: () => void;
-  disabled?: boolean;
+  disabled: boolean;
   children: React.ReactNode;
 }
 

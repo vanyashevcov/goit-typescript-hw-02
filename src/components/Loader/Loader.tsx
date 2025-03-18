@@ -13,8 +13,11 @@ const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({
 }) => {
   return (
     <div
-      onClick={onClick}
-      style={{ cursor: disabled ? "not-allowed" : "pointer" }}
+      onClick={disabled ? undefined : onClick}
+      style={{
+        cursor: disabled ? "not-allowed" : "pointer",
+        pointerEvents: disabled ? "none" : "auto",
+      }}
       aria-disabled={disabled}
     >
       {children}

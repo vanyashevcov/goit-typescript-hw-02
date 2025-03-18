@@ -56,7 +56,8 @@ function App() {
     const getData = async () => {
       try {
         setIsLoading(true);
-        const { results, total_pages }: FetchImagesResponse = await imagesService.fetchImages(query, page);
+        const { results, total_pages }: FetchImagesResponse =
+          await imagesService.fetchImages(query, page);
 
         if (!results.length) {
           setIsEmpty(true);
@@ -102,7 +103,11 @@ function App() {
     setPage((prevPage) => prevPage + 1);
   };
 
-  const openModal = (src: string, alt: string, description: string | null): void => {
+  const openModal = (
+    src: string,
+    alt: string,
+    description: string | null
+  ): void => {
     setModalIsOpen(true);
     setModalSrc(src);
     setModalAlt(alt);
