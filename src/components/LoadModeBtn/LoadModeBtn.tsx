@@ -1,16 +1,12 @@
 import React from "react";
 
 interface LoadMoreBtnProps {
-  children: React.ReactNode;
   onClick: () => void;
   disabled?: boolean;
+  children: React.ReactNode;
 }
 
-const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({
-  children,
-  onClick,
-  disabled = false,
-}) => {
+const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ onClick, disabled, children }) => {
   return (
     <button onClick={onClick} disabled={disabled}>
       {children}
