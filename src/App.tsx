@@ -4,9 +4,10 @@ import ImageGallery from "./components/ImageGallery/ImageGallery";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import LoadMoreBtn from "./components/LoadModeBtn/LoadModeBtn";
 import { ImageModal } from "./components/ImageModal/ImageModal";
 import * as imagesService from "./services/api";
+import LoadMoreBtn from "./components/LoadModeBtn/LoadModeBtn";
+
 
 interface ApiImage {
   id: string;
@@ -99,9 +100,10 @@ function App() {
     setError(null);
   };
 
-  const onLoadMore = (): void => {
+  const onLoadMore: () => void = () => {
     setPage((prevPage) => prevPage + 1);
   };
+
 
   const openModal = (
     src: string,
@@ -134,12 +136,13 @@ function App() {
             openModal={openModal}
           />
         )}
-        {isLoading && <Loader>Loading ...</Loader>}
+        {isLoading && <Loader />}
         {isVisible && (
           <LoadMoreBtn onClick={onLoadMore} disabled={isLoading}>
             {isLoading ? "Loading..." : "Load more"}
           </LoadMoreBtn>
         )}
+
         {error && <ErrorMessage>Error - {error.message}</ErrorMessage>}
         {isEmpty && <ErrorMessage>No images found...</ErrorMessage>}
         <ImageModal
